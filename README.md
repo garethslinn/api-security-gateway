@@ -1,5 +1,23 @@
 # api-security-gateway
 
+![API Security Gateway](./api-security-gateway.png)
+
+A security gateway for APIs with features such as rate limiting, IP whitelisting, and injection prevention. This library helps you secure your APIs by controlling access and preventing common attack vectors.
+
+## Features
+
+- **Rate Limiting**: Control the number of requests a user can make within a specified timeframe.
+- **IP Whitelisting/Blacklisting**: Allow or deny requests based on IP addresses.
+- **Injection Prevention**: Sanitize inputs to prevent SQL injection, XSS, and other injection attacks.
+
+## Installation
+
+You can install the library using npm:
+
+````bash
+npm install api-security-gateway
+
+
 A security gateway for APIs with features such as rate limiting, IP whitelisting, and injection prevention. This library helps you secure your APIs by controlling access and preventing common attack vectors.
 
 ## Features
@@ -14,7 +32,7 @@ A security gateway for APIs with features such as rate limiting, IP whitelisting
 git clone https://github.com/yourusername/api-security-gateway.git
 cd api-security-gateway
 npm install
-```
+````
 
 ### Using with Express
 
