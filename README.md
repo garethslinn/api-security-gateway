@@ -1,4 +1,5 @@
 # api-security-gateway
+
 A security gateway for APIs with features such as rate limiting, IP whitelisting, and injection prevention. This library helps you secure your APIs by controlling access and preventing common attack vectors.
 
 ## Features
@@ -16,11 +17,12 @@ npm install
 ```
 
 ### Using with Express
+
 Here's an example of how to use the api-security-gateway library in an Express application:
 
 ```javascript
-const express = require('express');
-const apiSecurityGateway = require('api-security-gateway');
+const express = require("express");
+const apiSecurityGateway = require("api-security-gateway");
 
 const app = express();
 app.use(express.json());
@@ -28,12 +30,12 @@ app.use(express.json());
 const securityOptions = {
   rateLimit: {
     maxRequests: 100,
-    windowMs: 15 * 60 * 1000 // 15 minutes
+    windowMs: 15 * 60 * 1000, // 15 minutes
   },
   ipFilter: {
-    whitelist: ['127.0.0.1'],
-    blacklist: ['192.168.1.1']
-  }
+    whitelist: ["127.0.0.1"],
+    blacklist: ["192.168.1.1"],
+  },
 };
 
 const securityGateway = apiSecurityGateway(securityOptions);
@@ -43,7 +45,7 @@ app.use((req, res, next) => {
     ip: req.ip,
     body: req.body,
     query: req.query,
-    params: req.params
+    params: req.params,
   };
 
   const result = securityGateway(requestInfo);
@@ -54,16 +56,15 @@ app.use((req, res, next) => {
   }
 });
 
-app.get('/secure-endpoint', (req, res) => {
-  res.send('This is a secure endpoint');
+app.get("/secure-endpoint", (req, res) => {
+  res.send("This is a secure endpoint");
 });
 
 app.listen(3000, () => {
-  console.log('Server running on port 3000');
+  console.log("Server running on port 3000");
 });
 ```
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-# api-security-gateway
+This project is licensed under the MIT License - see the LICENSE file for details.
